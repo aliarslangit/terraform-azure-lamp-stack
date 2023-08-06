@@ -1,22 +1,25 @@
 #!/bin/bash
 
-# Update package information
+#Install Apache
 sudo apt update
+sudo apt install apache2 -y
 
-# Install Apache
-sudo apt install -y apache2
+#Allow apache from firewall
+sudo ufw app list
+sudo ufw allow in "Apache"
+sudo ufw status
 
-# Install PHP and required modules
-sudo apt install -y php libapache2-mod-php php-mysql
+#Install mysql
+sudo apt install mysql-server -y
 
-# Configure Apache to use PHP
-sudo a2enmod php
 
-# Restart Apache
-sudo systemctl restart apache2
+#Install php
+sudo apt install php libapache2-mod-php php-mysql -y
 
-# Optional: Secure MySQL installation (comment out if not needed)
-# sudo mysql_secure_installation
+#Verify Installations
+ php -v
+ apache2 -v
+ sudo mysql
 
 # Output LAMP stack details
 echo "LAMP stack installation complete!"
