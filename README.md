@@ -14,10 +14,8 @@ This Terraform module creates a LAMP (Linux, Apache, MySQL, PHP) stack on Azure.
     - [Outputs](#outputs)
   - [Examples](#examples)
   - [Variables](#variables)
-  - [Outputs](#outputs)
   - [License](#license)
-  - [Contributing](#contributing)
-  - [Authors](#authors)
+  - [Authors](#author)
 
 ## Description
 
@@ -63,9 +61,6 @@ The following input variables are available in this module:
 | `db_size`                 | The size of the database.                             | string | `"5120"`                              | no       |
 | `dbusername`              | The username for logging into the Azure MySQL server. | string | `"azureuser"`                         | no       |
 | `dbpassword`              | The password for the Azure MySQL server instance.     | string |                                       | YES      |
-### Outputs
-
-The module provides the following outputs:
 
 | Name                      | Description                                           |
 |---------------------------|-------------------------------------------------------|
@@ -94,5 +89,13 @@ module "lamp_stack" {
  dbusername= "azureuser"
  dbpassword=""
 }
+```
 
+## License
+
+>You can check out the full license [here](https://github.com/aliarslangit/terraform-azure-lamp-stack/blob/main/license.txt)
+
+## Author
+This module has been developed by ALI ARSLAN.
+https://www.linkedin.com/in/aliarslan-enthusiast/
 
