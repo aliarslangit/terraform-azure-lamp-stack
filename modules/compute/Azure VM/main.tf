@@ -25,8 +25,8 @@ resource "azurerm_linux_virtual_machine" "linuxvm" {
   resource_group_name = var.rgname
   location            = var.location
   size                = var.vmsize
-  admin_username      = var.adminuser
-  admin_password      = var.adminpassword
+  admin_username      = var.vmuser
+  admin_password      = var.vmpassword
   custom_data         = filebase64("lamp.sh")
   network_interface_ids = [
     azurerm_network_interface.linuxvm.id,
