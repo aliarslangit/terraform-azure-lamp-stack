@@ -2,37 +2,31 @@
 //------------------------------------General Properties------------------------------------\\
 variable "rgname" {
   type    = string
-  default = "RG-git"
+  default = "rg-lamp"
 }
 
 variable "location" {
   type    = string
-  default = "West US"
+  default = "East US"
 }
 //------------------------------------VM Configurations------------------------------------\\
 variable "vmname" {
   type    = string
-  default = "demo-vm"
+  default = "lamp-vm"
 }
 
 variable "vmuser" {
   type    = string
-  default = "vmuser"
+  default = "azureuser"
 }
 variable "vmpassword" {
   type    = string
-  default = "*************"
 }
 variable "vmsize" {
   type    = string
-  default = "Standard_F2"
+  default = "Standard_DS2_v2"
 }
 
-variable "subnet_id" {
-  type = string
-  default = "0000000-000000000000-0000000000"
-
-}
 //------------------------------------OS Configurations-------------------------------------\\
 variable "publisher" {
   type    = string
@@ -49,43 +43,44 @@ variable "sku" {
 //------------------------------------VNET Configurations-------------------------------------\\
 variable "vnetname" {
   type    = string
-  default = ""
+  default = "vnet-lamp"
 }
 
 variable "address_space" {
   type = list(string)
+  default = [ "10.8.0.0/14" ]
 }
 
 variable "subnets" {
   description = "Map of subnet names and their respective CIDR ranges"
   type = map
+  default = {"lamp-subnet" = "10.8.0.0/17"}
 }
 
 //------------------------------------MYSQL Configurations-------------------------------------\\
 variable "db_size" {
   type        = string
-  default     = ""
+  default     = "5120"
 }
 variable "db_name" {
   type        = string
-  default     = ""
+  default     = "dblamp"
 }
 variable "subnet_name" {
   type        = string
-  default     = ""
+  default     = "lamp-subnet"
 }
 
 variable "db_server_name" {
   type        = string
-  default     = ""
+  default     = "lampservermysql"
 }
 variable "dbusername" {
   type        = string
-  default     = ""
+  default     = "azureuser"
 }
 variable "dbpassword" {
   type        = string
-  default     = ""
 }
 //------------------------------------TAGS---------------------------------------------------\\
 variable "creationdate" {
