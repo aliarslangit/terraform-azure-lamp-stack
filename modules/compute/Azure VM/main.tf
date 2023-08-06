@@ -27,7 +27,7 @@ resource "azurerm_linux_virtual_machine" "linuxvm" {
   size                = var.vmsize
   admin_username      = var.vmuser
   admin_password      = var.vmpassword
-  custom_data         = filebase64("github://github.com/aliarslangit/azure-terraform-lamp-stack/blob/main/lamp.sh")
+  custom_data         = filebase64("https://raw.githubusercontent.com/aliarslangit/azure-terraform-lamp-stack/main/lamp.sh")
   network_interface_ids = [
     azurerm_network_interface.linuxvm.id,
   ]
