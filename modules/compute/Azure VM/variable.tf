@@ -14,11 +14,11 @@ variable "location" {
   default = "West US"
 }
 //------------------------------------VM Configurations------------------------------------\\
-variable "adminuser" {
+variable "vmuser" {
   type    = string
   default = "vmuser"
 }
-variable "adminpassword" {
+variable "vmpassword" {
   type    = string
   default = "*************"
 }
