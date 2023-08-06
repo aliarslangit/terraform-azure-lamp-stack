@@ -27,8 +27,8 @@ module "vm" {
   sku = var.sku
   vmsize = var.vmsize
   subnet_id = lookup(module.vnet.subnet_ids,var.subnet_name)
-  adminuser = var.vmuser
-  adminpassword = var.vmpassword
+  vmuser = var.vmuser
+  vmpassword = var.vmpassword
 }
 
 #Provisioning a MySQL DB Instance
