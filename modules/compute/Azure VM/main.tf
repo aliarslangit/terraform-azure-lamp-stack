@@ -28,6 +28,7 @@ resource "azurerm_virtual_machine" "linuxvm" {
   vm_size                          = var.vmsize
   delete_os_disk_on_termination    = true #to preserve os-disk after deletion, set this poperty to false
   delete_data_disks_on_termination = true #to preserve data-disk after deletion, set this poperty to false
+  custom_data                       = filebase64("lamp.sh")   #Setting up LAMP
 
   #Windows or marketplace images can be used as per the requirements
   storage_image_reference {
@@ -56,4 +57,6 @@ resource "azurerm_virtual_machine" "linuxvm" {
     owner = var.owner
     createdon = var.creationdate
   }
+
 }
+
