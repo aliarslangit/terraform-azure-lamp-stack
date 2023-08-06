@@ -63,3 +63,36 @@ The following input variables are available in this module:
 | `db_size`                 | The size of the database.                             | string | `"5120"`                              | no       |
 | `dbusername`              | The username for logging into the Azure MySQL server. | string | `"azureuser"`                         | no       |
 | `dbpassword`              | The password for the Azure MySQL server instance.     | string |                                       | YES      |
+### Outputs
+
+The module provides the following outputs:
+
+| Name                      | Description                                           |
+|---------------------------|-------------------------------------------------------|
+| `virtual_machine_ip`      | The public IP address of the Azure Virtual Machine.  |
+
+## Examples
+
+You can use this module as follows:
+
+```hcl
+module "lamp_stack" {
+ source = "github.com/aliarslangit/azure-terraform-lamp-stack"
+ rgname=   "rg-lamp"
+ location= "East US"
+ vmname=   "lamp-vm"
+ vmuser=  "azureuser"
+ vmpassword =""
+ vmsize="Standard_DS2_v2"
+ vnetname = "vnet-lamp"
+ address_space=[ "10.8.0.0/14" ]
+ subnets={"lamp-subnet"="10.8.0.0/17"}
+ db_size= "5120"
+ db_name="dblamp"
+ subnet_name="lamp-subnet"
+ db_server_name="lampservermysql"
+ dbusername= "azureuser"
+ dbpassword=""
+}
+
+
