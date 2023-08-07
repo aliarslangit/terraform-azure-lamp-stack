@@ -72,7 +72,7 @@ You can use this module as follows:
 
 ```hcl
 module "lamp_stack" {
- source = "github.com/aliarslangit/azure-terraform-lamp-stack"
+ source = "github.com/aliarslangit/terraform-azure-lamp-stack"
  rgname=   "rg-lamp"
  location= "East US"
  vmname=   "lamp-vm"
